@@ -1,4 +1,6 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anti-Pegasus</title>
@@ -14,29 +16,31 @@
             position: relative;
             width: 100%;
             height: 100vh;
+            overflow: hidden; /* Ensure doors don't overflow */
         }
         
         .door {
             position: absolute;
             top: 0;
             bottom: 0;
+            width: 20%;
             height: 100%;
-            transform-origin: top;
+            transform-origin: center bottom; /* Rotate from the bottom center */
             transition: transform 1s;
         }
         
         .left-door {
             left: 0;
-            width: 20%;
             background-color: #F7DC6F; /* Yellow */
-            transform: rotate(5deg);
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%); /* Taper on the right edge */
+            transform: rotate(-5deg); /* Slight rotation */
         }
         
         .right-door {
             right: 0;
-            width: 20%;
             background-color: #FF3737; /* Red */
-            transform: rotate(355deg);
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); /* Taper on the left edge */
+            transform: rotate(5deg); /* Slight rotation */
         }
         
         .content {
@@ -101,5 +105,5 @@
             <p class="contact">Contact: <a href="mailto:aamir@flockrush.com" style="text-decoration: none; color: #fff;">aamir@flockrush.com</a></p>
         </div>
     </div>
-
-</body></html>
+</body>
+</html>
