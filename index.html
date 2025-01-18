@@ -90,6 +90,21 @@
             color: #fff; /* White */
             font-size: 18px;
         }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .door {
+                width: 25%; /* Slightly wider doors for better visibility on mobile */
+            }
+            
+            .left-door {
+                clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); /* Adjusted taper for mobile */
+            }
+            
+            .right-door {
+                clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%); /* Adjusted taper for mobile */
+            }
+        }
     </style>
 </head>
 <body>
